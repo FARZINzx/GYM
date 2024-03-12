@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <div className="bg-gray-20">
        <Navbar  currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-       <HomePage currentPage={currentPage} setCurrentPage={setCurrentPage} />
+       <HomePage setCurrentPage={setCurrentPage} />
       </div>
     </div>
     </>

@@ -1,4 +1,3 @@
-import React from "react";
 //import Types
 import { CurrentPage } from "@/Utils/CurrentPage";
 //import ActionButton
@@ -11,15 +10,13 @@ import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import SponserRedBull from "@/assets/SponsorRedBull.png";
 import SponserForbes from "@/assets/SponsorForbes.png";
 import SponserFortune from "@/assets/SponsorFortune.png";
-import Link from "../shared/Link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
-  currentPage: CurrentPage;
   setCurrentPage: (value: CurrentPage) => void;
 };
 
-function HomePage({ currentPage, setCurrentPage }: Props) {
+function HomePage({setCurrentPage }: Props) {
   return (
     <motion.section
       id="home"
@@ -56,7 +53,7 @@ function HomePage({ currentPage, setCurrentPage }: Props) {
               setCurrentPage={setCurrentPage}
             />
             <AnchorLink
-            className="text-sm font-bold text-primary-500 hover:text-secondary-500 underline duration-150"
+            className="text-sm cursor-pointer font-bold text-primary-500 hover:text-secondary-500 underline duration-150"
               onClick={() => setCurrentPage(CurrentPage.ContactUs)}
               href={`#${CurrentPage.ContactUs}`}
             >
@@ -80,7 +77,7 @@ function HomePage({ currentPage, setCurrentPage }: Props) {
         </motion.figure>
       </div>
       {/* Home => Sponser */}
-      <div className="hidden md:block h-[150px] bg-primary-100 z-10  py-10 px-10 w-full">
+      <div className="hidden md:block h-[150px] bg-primary-100 z-10  py-8 px-10 w-full">
         <div className="w-5/6 mx-auto flex items-center gap-60 ">
           <motion.figure
             initial="hidden"
