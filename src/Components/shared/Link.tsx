@@ -18,7 +18,7 @@ const Link = ({ page, currentPage, setCurrentPage }: Props) => {
   
   return (
     <AnchorLink
-      className={`${currentPage == hrefId ? "text-primary-500" : ""} transition duration-200 hover:text-primary-300`}
+      className={`${currentPage == hrefId ? "text-primary-500" : ""} transition duration-200 hover:text-primary-300 z-10`}
       href={`#${hrefId}`}
       onClick={() => setCurrentPage(hrefId)}
     >

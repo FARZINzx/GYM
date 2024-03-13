@@ -25,6 +25,7 @@ export default {
       fontFamily : {
         dmsans: ["DM Sans", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
+        yanone : ["Yanone Kaffeesatz", "sans-serif"],
       },
       content : {
         evolvetext: "url('./assets/EvolveText.png')",

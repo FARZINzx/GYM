@@ -10,7 +10,7 @@ type Props = {
 const ActionButton = ({setCurrentPage ,target , content }: Props) => {
   return (
     <AnchorLink
-     className='py-2 px-10 bg-secondary-500 hover:bg-primary-500 rounded-md duration-150 hover:text-white'
+     className='py-2 px-10 bg-secondary-500 hover:bg-primary-500 rounded-md duration-150 hover:text-white z-10'
      href={`#${target}`}
      onClick={()=>setCurrentPage(target as CurrentPage)}
     >
