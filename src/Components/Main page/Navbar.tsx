@@ -46,10 +46,6 @@ function Navbar({ currentPage, setCurrentPage }: Props) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isMobileScreen =
-    !screenAbove1080 && isMenuToggles
-      ? "opacity-1 translate-x-6 "
-      : "opacity-0  -translate-x-6 ";
 
   return (
     <closeNavbar.Provider
@@ -115,8 +111,9 @@ function Navbar({ currentPage, setCurrentPage }: Props) {
           </div>
         </div>
         {/*Mobile menu */}
-        <div
-          className={`${isMobileScreen} w-[300px] fixed right-0 bottom-0 h-full bg-primary-100 drop-shadow-xl z-40 duration-200`}
+        {!screenAbove1080 && isMenuToggles &&
+         (<div
+          className="w-[300px] fixed right-0 bottom-0 h-full bg-primary-100 drop-shadow-xl z-40 duration-200"
         >
           {/* close button */}
           <div className="w-full flex justify-end p-12">
@@ -148,7 +145,8 @@ function Navbar({ currentPage, setCurrentPage }: Props) {
               setCurrentPage={setCurrentPage}
             />
           </div>
-        </div>
+        </div>)
+        }
       </nav>
     </closeNavbar.Provider>
   );

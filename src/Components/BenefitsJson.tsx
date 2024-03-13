@@ -7,7 +7,12 @@ import { motion } from "framer-motion";
 //import AnchorLink
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const childVariant = {
+const childVariantUnder1080 = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const childVariantUpper1080 = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1 },
 };
@@ -27,32 +32,25 @@ function BenefitsJson({
   description,
   setCurrentPage,
 }: Props) {
-
-  
   const [isUnder1080, setIsUnder1080] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth > 1080) {
+      if (window.innerWidth >= 1080) {
         setIsUnder1080(false);
-      } else if (window.scrollY < 1080) {
+      } else {
         setIsUnder1080(true);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("resize", handleScroll);
   }, []);
-
-  const childVariant = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
-  };
-  
-
   return (
     <motion.div
-      variants={childVariant}
+      initial="hidden"
+      whileInView="visible"
+      variants={isUnder1080 ? childVariantUnder1080 : childVariantUpper1080}
       key={key}
       className="border-2 border-gray-100 rounded-md my-5 flex text-center px-5 py-16 justify-center flex-col gap-4 shadow-lg"
     >
