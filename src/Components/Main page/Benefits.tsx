@@ -53,7 +53,7 @@ const container = {
 
 function Benefits({ setCurrentPage }: Props) {
   return (
-    <motion.div
+    <motion.section
       id="benefits"
       className="w-full mt-1=5 min-h-full py-20 "
       onViewportEnter={() => setCurrentPage(CurrentPage.Benefits)}
@@ -151,7 +151,7 @@ function Benefits({ setCurrentPage }: Props) {
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
 
