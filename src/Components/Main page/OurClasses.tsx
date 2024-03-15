@@ -62,7 +62,7 @@ function OurClasses({ setCurrentPage }: Props) {
       <div className="w-5/6 mx-auto gap-10">
         {/* Text part */}
         <motion.div
-          className="flex flex-col items-start gap-8 w-3/5"
+          className="flex flex-col items-start gap-8 md:w-3/5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}

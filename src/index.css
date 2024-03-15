@@ -1,7 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,9 +8,16 @@
 html,
 body,
 #root,
-.App{
-     height: 100%;
-     width: 100%;
-     font-family: "DM Sans" , sans-serif;
-     @apply text-gray-500;
+.App {
+  height: 100%;
+  width: 100%;
+  font-family: "DM Sans", sans-serif;
+  @apply text-gray-500;
+}
+
+@layer components {
+  .input_Style {
+    @apply mb-2 w-full rounded-lg bg-primary-300
+  px-5 py-3 placeholder-white;
+  }
 }
