@@ -1,7 +1,7 @@
 import { CurrentPage } from "@/Utils/CurrentPage";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { useContext } from "react";
-import closeNavbar from "@/Context/CloseNavbar";
+// import { useContext } from "react";
+// import closeNavbar from "@/Context/CloseNavbar";
 
 type Props = {
   page: string;
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Link = ({ page, currentPage, setCurrentPage }: Props) => {
-  const closeNavbarContext = useContext(closeNavbar);
+  // const closeNavbarContext = useContext(closeNavbar);
 
   let hrefId = page.toLowerCase().replace(/ /g, "") as CurrentPage;
 
