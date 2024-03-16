@@ -47,7 +47,7 @@ function BenefitsJson({
     return () => window.removeEventListener("resize", handleScroll);
   }, []);
   return (
-    <motion.div
+    <motion.div 
       initial="hidden"
       whileInView="visible"
       variants={isUnder1080 ? childVariantUnder1080 : childVariantUpper1080}
