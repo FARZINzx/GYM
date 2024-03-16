@@ -54,12 +54,11 @@ const Classes: Array<ClassesType> = [
 
 function OurClasses({ setCurrentPage }: Props) {
   return (
-    <motion.section
-      id="ourclasses"
-      className="w-full bg-primary-100 py-40"
-      onViewportEnter={() => setCurrentPage(CurrentPage.OurClasses)}
-    >
-      <div className="w-5/6 mx-auto gap-10">
+    <section id="ourclasses" className="w-full bg-primary-100 py-40">
+      <motion.div
+        className="w-5/6 mx-auto gap-10"
+        onViewportEnter={() => setCurrentPage(CurrentPage.OurClasses)}
+      >
         {/* Text part */}
         <motion.div
           className="flex flex-col items-start gap-8 md:w-3/5"
@@ -102,8 +101,8 @@ function OurClasses({ setCurrentPage }: Props) {
             ))}
           </motion.ul>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
 

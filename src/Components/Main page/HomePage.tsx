@@ -18,13 +18,12 @@ type Props = {
 
 function HomePage({ setCurrentPage }: Props) {
   return (
-    <motion.section
-      id="home"
-      className="bg-gray-20 py-10 md:pb-0 gap-16"
-      onViewportEnter={() => setCurrentPage(CurrentPage.Home)}
-    >
+    <section id="home" className="bg-gray-20 py-10 md:pb-0 gap-16">
       {/* Home => text & image */}
-      <div className="flex flex-col md:flex-row justify-center mx-auto w-5/6 items-center gap-10">
+      <motion.div
+        className="flex flex-col md:flex-row justify-center mx-auto w-5/6 items-center gap-10"
+        onViewportEnter={() => setCurrentPage(CurrentPage.Home)}
+      >
         {/*Text*/}
         <motion.div
           className="flex flex-col mt-24 md:basis-3/5 gap-10"
@@ -48,7 +47,7 @@ function HomePage({ setCurrentPage }: Props) {
           </p>
           <div className="flex items-center gap-8">
             <ActionButton
-              target={CurrentPage.Home}
+              target={CurrentPage.ContactUs}
               content="Join Now"
               setCurrentPage={setCurrentPage}
             />
@@ -75,7 +74,7 @@ function HomePage({ setCurrentPage }: Props) {
         >
           <img src={HomePageGraphic} alt="HomePageGraphic" />
         </motion.figure>
-      </div>
+      </motion.div>
       {/* Home => Sponser */}
       <div className="hidden md:block h-[150px] bg-primary-100 z-10 py-8 px-10 w-full">
         <div className="w-5/6 mx-auto flex items-center gap-60 ">
@@ -117,7 +116,7 @@ function HomePage({ setCurrentPage }: Props) {
           </motion.figure>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

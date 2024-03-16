@@ -26,13 +26,24 @@ function ContactUs({ setCurrentPage }: Props) {
   };
 
   return (
-    <motion.section
-      onViewportEnter={() => setCurrentPage(CurrentPage.ContactUs)}
+    <section
+      id="contactus"
       className="my-12 w-full"
     >
-      <div className="w-5/6 mx-auto">
+      <motion.div className="w-5/6 mx-auto"
+        onViewportEnter={() => setCurrentPage(CurrentPage.ContactUs)}>
         {/* Text Part*/}
-        <div className="flex flex-col gap-5 md:w-3/5">
+        <motion.div
+          className="flex flex-col gap-5 md:w-3/5"
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
           <h1 className="font-bold text-3xl font-montserrat basis-3/5">
             <span className=" text-primary-500">JOIN NOW</span> TO GET IN SHAP
           </h1>
@@ -41,16 +52,24 @@ function ContactUs({ setCurrentPage }: Props) {
             sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
             adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
           </p>
-        </div>
+        </motion.div>
         {/* Form & Image*/}
         <div className="flex flex-col md:flex-row gap-8  my-10 justify-between">
           {/* Form*/}
-          <form
+          <motion.form
             target="_blank"
             onSubmit={submitHandler}
             action="https://formsubmit.co/5farzinhamzei@gmail.com"
             method="POST"
             className="basis-3/5"
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
           >
             <input
               type="text"
@@ -108,20 +127,30 @@ function ContactUs({ setCurrentPage }: Props) {
             >
               SUBMIT
             </button>
-          </form>
+          </motion.form>
           {/* Image*/}
-          <figure className="basis-2/5 z-10 relative mt-12 md:mt-0">
-            <div className="before:absolute before:-z-10 before:-bottom-20 before:-left-24  before:content-evolvetext before:hidden md:before:block"></div>
+          <motion.figure
+            className="basis-2/5 z-10 relative mt-12 md:mt-0"
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: 100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
+            <div className="before:absolute before:-z-10 before:-bottom-20 before:-left-28  before:content-evolvetext before:hidden md:before:block"></div>
 
             <img
               src={ContactUsPageGraphic}
               alt="ContactUsPageGraphic"
               className="w-full"
             />
-          </figure>
+          </motion.figure>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
 

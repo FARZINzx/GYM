@@ -12,13 +12,11 @@ type Props = {
 const Link = ({ page, currentPage, setCurrentPage }: Props) => {
   const closeNavbarContext = useContext(closeNavbar);
 
-  console.log(closeNavbarContext);
-  let hrefId = page.toLocaleLowerCase().replace(/ /g, "") as CurrentPage;
+  let hrefId = page.toLowerCase().replace(/ /g, "") as CurrentPage;
 
-  
   return (
     <AnchorLink
-      className={`${currentPage == hrefId ? "text-primary-500" : ""} transition duration-200 hover:text-primary-300 z-10`}
+      className={`${currentPage === hrefId ? "text-primary-500" : "" } transition duration-200 hover:text-primary-300`}
       href={`#${hrefId}`}
       onClick={() => setCurrentPage(hrefId)}
     >

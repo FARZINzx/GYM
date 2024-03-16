@@ -53,12 +53,11 @@ const container = {
 
 function Benefits({ setCurrentPage }: Props) {
   return (
-    <motion.section
-      id="benefits"
-      className="w-full mt-16 min-h-full py-20 "
-      onViewportEnter={() => setCurrentPage(CurrentPage.Benefits)}
-    >
-      <div className="w-5/6 mx-auto ">
+    <section id="benefits" className="w-full mt-16 min-h-full py-20 ">
+      <motion.div
+        className="w-5/6 mx-auto "
+        onViewportEnter={() => setCurrentPage(CurrentPage.Benefits)}
+      >
         {/* Text Part */}
         <motion.div
           className="flex flex-col gap-4 md:w-3/5 mb-5"
@@ -82,7 +81,7 @@ function Benefits({ setCurrentPage }: Props) {
         </motion.div>
         {/* Boxs Part */}
         <motion.div
-         className="flex flex-col md:flex-row justify-between gap-4 "
+          className="flex flex-col md:flex-row justify-between gap-4 "
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -100,28 +99,29 @@ function Benefits({ setCurrentPage }: Props) {
         </motion.div>
         {/* Image & Text Part */}
         <div className="flex flex-col md:flex-row mt-20">
-          <motion.figure 
-          className="flex justify-center items-center md:block"
-          initial = "hidden"
-          whileInView="visible"
-          viewport={{once : true , amount : 0.5}}
-          transition={{duration : .5}}
-          variants={{
-            hidden : {opacity : 0 , x:-50},
-            visible : {opacity : 1 , x:0}
-          }}
+          <motion.figure
+            className="flex justify-center items-center md:block"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
           >
             <img src={BenefitsPageGraphic} alt="BenefitsPageGraphic" />
           </motion.figure>
-          <motion.div className="basis-3/5 flex flex-col items-start justify-center gap-8 "
-           initial = "hidden"
-           whileInView="visible"
-           viewport={{once : true , amount : 0.5}}
-           transition={{duration : .5}}
-           variants={{
-             hidden : {opacity : 0 , x:100},
-             visible : {opacity : 1 , x:0}
-           }}
+          <motion.div
+            className="basis-3/5 flex flex-col items-start justify-center gap-8 "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: 100 },
+              visible: { opacity: 1, x: 0 },
+            }}
           >
             <h2 className=" relative font-montserrat text-3xl font-bold before:content-abstractwaves before:absolute before:-top-20 before:-left-10 ">
               MILLIONS OF HAPPY MEMBERS GETTING{" "}
@@ -150,8 +150,8 @@ function Benefits({ setCurrentPage }: Props) {
             />
           </motion.div>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
 
