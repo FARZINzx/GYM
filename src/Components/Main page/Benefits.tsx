@@ -55,7 +55,7 @@ function Benefits({ setCurrentPage }: Props) {
   return (
     <motion.section
       id="benefits"
-      className="w-full mt-1=5 min-h-full py-20 "
+      className="w-full mt-16 min-h-full py-20 "
       onViewportEnter={() => setCurrentPage(CurrentPage.Benefits)}
     >
       <div className="w-5/6 mx-auto ">

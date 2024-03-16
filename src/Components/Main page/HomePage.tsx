@@ -16,11 +16,11 @@ type Props = {
   setCurrentPage: (value: CurrentPage) => void;
 };
 
-function HomePage({setCurrentPage }: Props) {
+function HomePage({ setCurrentPage }: Props) {
   return (
     <motion.section
       id="home"
-      className="bg-gray-20 py-10 h-full md:pb-0 gap-16 -z-50"
+      className="bg-gray-20 py-10 md:pb-0 gap-16"
       onViewportEnter={() => setCurrentPage(CurrentPage.Home)}
     >
       {/* Home => text & image */}
@@ -39,7 +39,7 @@ function HomePage({setCurrentPage }: Props) {
         >
           <figure className="relative z-0">
             <div className="absolute before:-z-10 -top-20 -left-24 before:content-evolvetext before:hidden md:before:block -z-10"></div>
-            <img className="z-10" src={HomePageText} alt="HomePagrText" />
+            <img className="z-10" src={HomePageText} alt="HomePageText" />
           </figure>
           <p className="text-sm">
             Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
@@ -53,7 +53,7 @@ function HomePage({setCurrentPage }: Props) {
               setCurrentPage={setCurrentPage}
             />
             <AnchorLink
-            className="text-sm cursor-pointer font-bold text-primary-500 hover:text-secondary-500 underline duration-150"
+              className="text-sm cursor-pointer font-bold text-primary-500 hover:text-secondary-500 underline duration-150"
               onClick={() => setCurrentPage(CurrentPage.ContactUs)}
               href={`#${CurrentPage.ContactUs}`}
             >
@@ -77,7 +77,7 @@ function HomePage({setCurrentPage }: Props) {
         </motion.figure>
       </div>
       {/* Home => Sponser */}
-      <div className="hidden md:block h-[150px] bg-primary-100 z-10  py-8 px-10 w-full">
+      <div className="hidden md:block h-[150px] bg-primary-100 z-10 py-8 px-10 w-full">
         <div className="w-5/6 mx-auto flex items-center gap-60 ">
           <motion.figure
             initial="hidden"
