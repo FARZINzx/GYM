@@ -23,3 +23,5 @@ npm run dev</code></pre>
     <p>This project is licensed under the MIT License.</p>
     <h2>Contact</h2>
     <p>For any questions or inquiries, please contact me at <a href="mailto:5farzinhamzei@gmail.com">5farzinhamzei@gmail.com</a>.</p>
+    <p>Made with ❤️ by <b>FARZINzx</b></p>
+
